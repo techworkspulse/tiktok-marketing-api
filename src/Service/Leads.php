@@ -118,7 +118,7 @@ final class Leads extends \Promopult\TikTokMarketingApi\AbstractService
         ?int $pageId = null
     ): array {
         return $this->requestApi(
-            'GET',
+            'POST',
             '/open_api/v1.3/page/lead/task/',
             [
                 'advertiser_id' => $advertiserId,
@@ -229,8 +229,8 @@ final class Leads extends \Promopult\TikTokMarketingApi\AbstractService
      * @param int $appId
      * @param string $secret
      * @param array $subscriptionDetail
-     * @param string $url
-     * @param string $object
+     * @param string $callback_url
+     * @param string $subscribeEntity
      * @return array
      *
      * @throws Throwable
@@ -241,8 +241,8 @@ final class Leads extends \Promopult\TikTokMarketingApi\AbstractService
         int $appId,
         string $secret,
         array $subscriptionDetail,
-        string $url,
-        string $object = 'LEAD'
+        string $callback_url,
+        string $subscribeEntity = 'LEAD'
     ): array {
         return $this->requestApi(
             'POST',
@@ -251,8 +251,8 @@ final class Leads extends \Promopult\TikTokMarketingApi\AbstractService
                 'app_id' => $appId,
                 'secret' => $secret,
                 'subscription_detail' => $subscriptionDetail,
-                'object' => $object,
-                'url' => $url
+                'subscribe_entity' => $subscribeEntity,
+                'callback_url' => $callback_url
             ]
         );
     }
@@ -290,7 +290,7 @@ final class Leads extends \Promopult\TikTokMarketingApi\AbstractService
      *
      * @param int $appId            # The APP ID
      * @param string $secret        # Secret
-     * @param string $object        # The object that you want to subscribe to. Use LEAD for this endpoint
+     * @param string $subscribeEntity        # The object that you want to subscribe to. Use LEAD for this endpoint
      * @param int|null $page        # The current page number. Default value: 1. Value range: ≥ 1
      * @param int|null $pageSize    # The page size. Default value:10. Value range: 1-1000
      *
@@ -301,7 +301,7 @@ final class Leads extends \Promopult\TikTokMarketingApi\AbstractService
     public function getSubscriptions(
         int $appId,
         string $secret,
-        string $object = 'LEAD',
+        string $subscribeEntity = 'LEAD',
         ?int $page = null,
         ?int $pageSize = null
     ): array {
@@ -311,7 +311,7 @@ final class Leads extends \Promopult\TikTokMarketingApi\AbstractService
             [
                 'app_id' => $appId,
                 'secret' => $secret,
-                'object' => $object,
+                'subscribe_entity' => $subscribeEntity,
                 'page' => $page,
                 'page_size' => $pageSize
             ]

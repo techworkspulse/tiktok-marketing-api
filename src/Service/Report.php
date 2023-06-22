@@ -15,12 +15,12 @@ final class Report extends \Promopult\TikTokMarketingApi\AbstractService
      * @param ?string $dataLevel    Reporting data level. Required when report_type is BASIC,AUDIENCE or CATALOG
      * @param ?string $serviceType
      * @param ?array $metrics       Metrics to query. Defaut: ["spend," "impressions"]
-     * @param bool $lifetime        Whether to request the lifetime metrics. The lifetime metric name is the same as
-     *                              the normal one. If lifetime = true, the start_date and end_date parameters will
+     * @param bool $query_lifetime        Whether to request the query_lifetime metrics. The query_lifetime metric name is the same as
+     *                              the normal one. If query_lifetime = true, the start_date and end_date parameters will
      *                              be ignored.
-     * @param ?string $startDate    Query start date, format such as: 2020-01-01, required when lifetime = false
-     * @param ?string $endDate      Query end date, format such as: 2020-01-01, required when lifetime = false
-     * @param ?array $filters       Filter criteria. Supported filtering criteria vary according to 'service_type' and
+     * @param ?string $startDate    Query start date, format such as: 2020-01-01, required when query_lifetime = false
+     * @param ?string $endDate      Query end date, format such as: 2020-01-01, required when query_lifetime = false
+     * @param ?array $filtering       Filter criteria. Supported filtering criteria vary according to 'service_type' and
      *                              'data_level'
      * @param ?string $orderField   Sort field. All supported metrics (excluding attribute metrics) support sorting,
      *                              not sorting by default
@@ -40,10 +40,10 @@ final class Report extends \Promopult\TikTokMarketingApi\AbstractService
         ?string $dataLevel = null,
         ?string $serviceType = null,
         ?array $metrics = null,
-        bool $lifetime = false,
+        bool $query_lifetime = false,
         ?string $startDate = null,
         ?string $endDate = null,
-        ?array $filters = null,
+        ?array $filtering = null,
         ?string $orderField = null,
         ?string $orderType = null,
         ?int $page = null,
@@ -61,10 +61,10 @@ final class Report extends \Promopult\TikTokMarketingApi\AbstractService
                 'metrics' => $metrics,
                 'start_date' => $startDate,
                 'end_date' => $endDate,
-                'lifetime' => $lifetime,
+                'query_lifetime' => $query_lifetime,
                 'order_field' => $orderField,
                 'order_type' => $orderType,
-                'filters' => $filters,
+                'filtering' => $filtering,
                 'page' => $page,
                 'page_size' => $pageSize
             ]

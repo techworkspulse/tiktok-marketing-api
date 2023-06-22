@@ -13,10 +13,9 @@ final class Advertiser extends \Promopult\TikTokMarketingApi\AbstractService
      *                              Advertiser ID can be obtained through the Get Authorized Advertiser interface.
      *
      * @param array $fields         A list of information to be returned. If not specified, all information is returned
-     *                              by default. Optional values include：promotion_area, telephone, contacter, currency,
-     *                              phonenumber, timezone, id, role, company, status, description, reason, address,
-     *                              name, language, industry, license_no, email, license_url, country, balance,
-     *                              create_time.
+     *                              by default. Optional values include：telephone_number, contacter, currency, cellphone_number, timezone, advertiser_id, role,
+     *                              company, status, description, rejection_reason,
+     *                              address, name, language, industry, license_no, email, license_url, country, balance, create_time, display_timezone, owner_bc_id.
      * @return array
      *
      * @throws \Throwable

@@ -29,7 +29,8 @@ final class Campaign extends \Promopult\TikTokMarketingApi\AbstractService
         ?array $fields = null,
         ?array $filtering = null,
         ?int $page = null,
-        ?int $pageSize = null
+        ?int $pageSize = null,
+        ?array $excludeFieldTypesInResponse = null
     ): array {
         return $this->requestApi(
             'GET',
@@ -39,7 +40,8 @@ final class Campaign extends \Promopult\TikTokMarketingApi\AbstractService
                 'fields' => $fields,
                 'filtering' => $filtering,
                 'page' => $page,
-                'page_size' => $pageSize
+                'page_size' => $pageSize,
+                'exclude_field_types_in_response' => $excludeFieldTypesInResponse
             ]
         );
     }
