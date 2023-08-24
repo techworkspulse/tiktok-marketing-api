@@ -226,7 +226,7 @@ final class Leads extends \Promopult\TikTokMarketingApi\AbstractService
      * in multiple subscriptions. Subscription status changes of a page in one subscription do not affect the
      * subscription status of this page in another subscription.
      *
-     * @param int $appId
+     * @param string $appId
      * @param string $secret
      * @param array $subscriptionDetail
      * @param string $callback_url
@@ -238,7 +238,7 @@ final class Leads extends \Promopult\TikTokMarketingApi\AbstractService
      * @see https://ads.tiktok.com/marketing_api/docs?id=1701890942854146
      */
     public function subscribeToLeads(
-        int $appId,
+        string $appId,
         string $secret,
         array $subscriptionDetail,
         string $callback_url,
@@ -260,9 +260,9 @@ final class Leads extends \Promopult\TikTokMarketingApi\AbstractService
     /**
      * Cancel subscription
      *
-     * @param int $appId
+     * @param string $appId
      * @param string $secret
-     * @param int $subscriptionId
+     * @param string $subscriptionId
      * @return array
      *
      * @throws Throwable
@@ -270,9 +270,9 @@ final class Leads extends \Promopult\TikTokMarketingApi\AbstractService
      * @see https://ads.tiktok.com/marketing_api/docs?id=1709486460752897
      */
     public function cancelSubscription(
-        int $appId,
+        string $appId,
         string $secret,
-        int $subscriptionId
+        string $subscriptionId
     ): array {
         return $this->requestApi(
             'POST',
@@ -288,7 +288,7 @@ final class Leads extends \Promopult\TikTokMarketingApi\AbstractService
     /**
      * Get subscriptions
      *
-     * @param int $appId            # The APP ID
+     * @param string $appId            # The APP ID
      * @param string $secret        # Secret
      * @param string $subscribeEntity        # The object that you want to subscribe to. Use LEAD for this endpoint
      * @param int|null $page        # The current page number. Default value: 1. Value range: ≥ 1
@@ -299,7 +299,7 @@ final class Leads extends \Promopult\TikTokMarketingApi\AbstractService
      * @throws Throwable
      */
     public function getSubscriptions(
-        int $appId,
+        string $appId,
         string $secret,
         string $subscribeEntity = 'LEAD',
         ?int $page = null,
