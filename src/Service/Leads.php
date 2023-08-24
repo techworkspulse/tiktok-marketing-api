@@ -103,9 +103,9 @@ final class Leads extends \Promopult\TikTokMarketingApi\AbstractService
     /**
      * Create lead download task
      *
-     * @param int $advertiserId
-     * @param int|null $adId
-     * @param int|null $pageId
+     * @param string $advertiserId
+     * @param string|null $adId
+     * @param string|null $pageId
      * @return array
      *
      * @throws Throwable
@@ -113,9 +113,9 @@ final class Leads extends \Promopult\TikTokMarketingApi\AbstractService
      * @see https://ads.tiktok.com/marketing_api/docs?id=1701890942344193
      */
     public function createLeadDownloadTask(
-        int $advertiserId,
-        ?int $adId = null,
-        ?int $pageId = null
+        string $advertiserId,
+        ?string $adId = null,
+        ?string $pageId = null
     ): array {
         return $this->requestApi(
             'POST',
@@ -134,8 +134,8 @@ final class Leads extends \Promopult\TikTokMarketingApi\AbstractService
      * Please note that the leads file will expire in 10 minutes after it was generated. You will get a file not exist
      * error if the file has expired.
      *
-     * @param int $advertiserId
-     * @param int $taskId
+     * @param string $advertiserId
+     * @param string $taskId
      * @return array
      *
      * @throws Throwable
@@ -143,8 +143,8 @@ final class Leads extends \Promopult\TikTokMarketingApi\AbstractService
      * @see https://ads.tiktok.com/marketing_api/docs?id=1701890942344193
      */
     public function getLeadDownloadTask(
-        int $advertiserId,
-        int $taskId
+        string $advertiserId,
+        string $taskId
     ): array {
         return $this->requestApi(
             'GET',
